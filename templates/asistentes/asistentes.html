@@ -1,6 +1,6 @@
 {% extends "base.html"%}
 {% block content%}
-<h3>* Campo obligatorio</h3>
+<p>* Campo obligatorio</p>
 <br>
 <form action="{% url 'asistentes:asistentes_create'%}" method="POST">
     {% csrf_token %}
@@ -100,7 +100,7 @@
   <div class="col-sm-12">  
     <div class="form-group">
 	
-		<input class="btn btn-success pull-left" type="submit" name="submit" value="Guardar">
+		<input class="btn btn-success pull-left" type="submit" name="submit" value="Enviar">
 	 <br><br>
   </div>
   </div>
