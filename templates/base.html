@@ -87,11 +87,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{%url 'landing:index_get_template' page='index' %}">Inicio</a></li>
                     <li><a href="{%url 'landing:index_get_template' page='informacion_general' %}">Información general</a></li>
-                    <li><a href="#">Registro</a></li>
+                    <li><a href="{% url 'asistentes:asistentes_new' %}">Registro</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{% url 'asistentes:asistentes_new' %}">Registro de asistentes</a></li>
-                </ul>
+               
                 </div>
             </div>
         </nav>
@@ -124,6 +122,7 @@
 
 Última actualización: 08/02/2017
 </footer>
-
+{%block js%}
+{%endblock%}
 </body>
 </html>

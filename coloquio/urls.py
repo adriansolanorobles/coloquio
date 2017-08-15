@@ -21,6 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^asistentes/',include("modules.modulo_cuatro.urls",namespace="modulo_cuatro")),
     url(r'^',include("modules.landing.urls",namespace="landing")),
+    url(r'^asistentes/',include("modules.asistentes.urls",namespace="asistentes")),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
