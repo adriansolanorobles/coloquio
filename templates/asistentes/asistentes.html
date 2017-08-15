@@ -46,12 +46,12 @@
                        <label class="control-label">Trabajas en educación</label>                
                             {{form.trabajas_en_educacion}}
                 </div>
-                <div class="form-group required">
+                <div class="form-group required si-trabaja">
                        <label class="control-label">Institución de procedencia</label>                
                             {{form.institucion_de_procedencia}}
                 </div>    
               
-              <div class="form-group required">
+              <div class="form-group required si-trabaja">
                 <label class="control-label">Nivel</label>
                <div class="checkbox">
                 <label>{{form.preescolar}}Preescolar</label>
@@ -75,11 +75,11 @@
                 <label>{{form.no_formal}}No formal</label>
               </div>
               </div>
-                <div class="form-group required">
+                <div class="form-group required no-trabaja">
                        <label class="control-label">Ocupación</label>                
                             {{form.ocupacion}}
                 </div>
-                  <div class="form-group required">
+                  <div class="form-group required no-trabaja">
                        <label class="control-label">Nombramiento</label>                
                             {{form.nombramiento}}
                 </div>
@@ -109,30 +109,14 @@ $(document).ready(function() {
     $('#id_trabajas_en_educacion').change(function(){
          var trabajas_en_educacion = $( '#id_trabajas_en_educacion option:selected' ).val();
          if(trabajas_en_educacion == "Si"){
-            $('#id_ocupacion').prop('disabled', true);
-            $('#id_nombramiento').prop('disabled', true);
+            $('.no-trabaja :input').prop('disabled', true);
+            $('.si-trabaja :input').prop('disabled', false);
             
-            $('#id_institucion_de_procedencia').prop('disabled', false);
-            $('#id_preescolar').prop('disabled', false);
-            $('#id_primaria').prop('disabled', false);
-            $('#id_secundaria').prop('disabled', false);
-            $('#id_media_superior').prop('disabled', false);
-            $('#id_superior').prop('disabled', false);
-            $('#id_posgrado').prop('disabled', false);
-            $('#id_no_formal').prop('disabled', false);
 
          }else if(trabajas_en_educacion == "No"){
-            $('#id_institucion_de_procedencia').prop('disabled', true);
-            $('#id_preescolar').prop('disabled', true);
-            $('#id_primaria').prop('disabled', true);
-            $('#id_secundaria').prop('disabled', true);
-            $('#id_media_superior').prop('disabled', true);
-            $('#id_superior').prop('disabled', true);
-            $('#id_posgrado').prop('disabled', true);
-            $('#id_no_formal').prop('disabled', true);          
+            $('.no-trabaja :input').prop('disabled', false);
+            $('.si-trabaja :input').prop('disabled', true);
 
-            $('#id_ocupacion').prop('disabled', false);
-            $('#id_nombramiento').prop('disabled', false);
          }
       });
 

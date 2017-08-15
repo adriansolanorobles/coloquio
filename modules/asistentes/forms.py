@@ -11,23 +11,27 @@ class AsistentesForm(ModelForm):
                     {
                         "class": "form-control",
                         "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
+                        "placeholder":"Ej. Jorge Luis",
                     }
             ),
             'apellido_paterno': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
                         "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
+                        "placeholder":"Ej. Martínez",
                     }
             ),
             'apellido_materno': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
                         "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
+                        "placeholder":"Ej. Rodríguez",
                     }
             ),
             'correo': forms.EmailInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. jorge@micorreo.com",
 
                     }
             ),
@@ -35,12 +39,14 @@ class AsistentesForm(ModelForm):
             'edad': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. 32",
 
                     }
             ),
             'celular': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. 5554630876",
 
                     }
             ),
@@ -55,6 +61,7 @@ class AsistentesForm(ModelForm):
             'institucion_de_procedencia': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. Instituto Politécnico Nacional",
 
                     }
             ),
@@ -62,12 +69,14 @@ class AsistentesForm(ModelForm):
             'ocupacion': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. Consultor",
 
                     }
             ),
             'nombramiento': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
+                        "placeholder":"Ej. Dr.",
 
                     }
             ),

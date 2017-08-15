@@ -12,10 +12,7 @@ class Asistentes(models.Model):
         ('No', 'No'),
 	)
 	TALLERES_CHOICES = (
-        ('t1', 'Taller 1'),
-        ('t2', 'Taller 2'),
-        ('t3', 'Taller 3'),
-        ('t4', 'Taller 4'),
+        ('t1', 'Taller 1 El entrenamiento de la Atención Plena para el manejo del estrés.'),
 	)
 	nombre = models.CharField(max_length=255)
 	apellido_paterno = models.CharField(max_length=255)

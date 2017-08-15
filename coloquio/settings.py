@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+import datetime
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=cfdiloellybb((f*@n#b5#7+*3k1wmpc+dq=)93p!773i9rw!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'coloquio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'coloquio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coloquio_db',
-        'USER': 'coloquio_admin',
-        'PASSWORD' : 'pass1234$',
-        'HOST' : 'localhost',
-        'PORT' : '5432'
+        'NAME': os.getenv('DBNAME',''),
+        'USER': os.getenv('DBUSER',''),
+        'PASSWORD': os.getenv('DBPASSWORD',''),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -108,11 +108,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = "users.User"
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'sales@luciusreport.com'
-EMAIL_HOST_PASSWORD = 'Lucius.2017!'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.ntchosting.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'notificaciones@habilidadesparaadolescentes.com'
+EMAIL_HOST_PASSWORD = 'cerveza666'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -134,3 +133,9 @@ STATICFILES_DIRS = [os.path.join(os.getcwd(),'static') ]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(os.getcwd(),'media')
+
+try:
+    from .local_settings import *
+
+except:
+    pass
