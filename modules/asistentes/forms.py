@@ -9,22 +9,19 @@ class AsistentesForm(ModelForm):
         widgets = {
             'nombre': forms.TextInput(attrs=
                     {
-                        "class": "form-control",
-                        "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
+                        "class": "form-control",                        
                         "placeholder":"Ej. Jorge Luis",
                     }
             ),
             'apellido_paterno': forms.TextInput(attrs=
                     {
-                        'class': 'form-control',
-                        "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
+                        'class': 'form-control',                        
                         "placeholder":"Ej. Martínez",
                     }
             ),
             'apellido_materno': forms.TextInput(attrs=
                     {
                         'class': 'form-control',
-                        "pattern":"^([a-zA-Z]+(?:\.)?(?:(?:'| )[a-zA-Z]+(?:\.)?)*)$",
                         "placeholder":"Ej. Rodríguez",
                     }
             ),
