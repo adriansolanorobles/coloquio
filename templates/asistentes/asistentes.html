@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% block content%}
+<h3>* Campo obligatorio</h3>
 <br>
 <form action="{% url 'asistentes:asistentes_create'%}" method="POST">
     {% csrf_token %}
@@ -24,6 +25,10 @@
                  <label class="control-label">Correo</label>                
                       {{form.correo}}
           </div>
+          <div class="form-group requi required">
+                 <label class="control-label">Confirmación correo</label>                
+                      <input class="form-control" id="id_confirmacion_correo" name="confirmacion_correo" placeholder="Ej. jorge@micorreo.com" type="email" required="">
+          </div>
           <div class="form-group required">
                  <label class="control-label">Sexo</label>                
                       {{form.sexo}}
@@ -37,7 +42,7 @@
                       {{form.celular}}
           </div>
 
-            <div class="form-group required checkbox">
+            <div class="form-group checkbox">
               <label class="control-label">{{form.te_gustaria_recibir_informacion}}Te gustaria recibir información</label>
             </div>
         </div>
@@ -79,10 +84,10 @@
                        <label class="control-label">Ocupación</label>                
                             {{form.ocupacion}}
                 </div>
-                  <div class="form-group required no-trabaja">
+                  <!--div class="form-group required no-trabaja">
                        <label class="control-label">Nombramiento</label>                
                             {{form.nombramiento}}
-                </div>
+                </div-->
                     <div class="form-group required">
                        <label class="control-label">Selecciona un taller</label>                
                             {{form.taller}}
@@ -96,10 +101,12 @@
     <div class="form-group">
 	
 		<input class="btn btn-success pull-left" type="submit" name="submit" value="Guardar">
-	</div>
+	 <br><br>
   </div>
+  </div>
+
 </form>
-<br>
+
 {% endblock%}
 
 {%block js%}
