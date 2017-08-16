@@ -86,6 +86,10 @@
                        <label class="control-label">Nombramiento</label>                
                             {{form.nombramiento}}
                 </div-->
+                <div class="form-group required">
+                       <label class="control-label">¿Deseas asistir a los talleres?</label>                
+                            {{form.deseas_asistir_a_los_talleres}}
+                </div>
                     <div class="form-group required">
                        <label class="control-label">Selecciona un taller</label>                
                             {{form.taller}}
@@ -124,6 +128,18 @@ $(document).ready(function() {
             $('.no-trabaja :input').prop('disabled', false);
             $('.si-trabaja :input').prop('disabled', true);
 
+         }
+      });
+
+      $('#id_deseas_asistir_a_los_talleres').change(function(){
+         var deseas_asistir_a_los_talleres = $( '#id_deseas_asistir_a_los_talleres option:selected' ).val();
+         if(deseas_asistir_a_los_talleres == "Si"){
+            $('#id_taller').prop('disabled', true);
+        
+
+         }else if(deseas_asistir_a_los_talleres == "No"){
+            $('#id_taller').prop('disabled', false);
+        
          }
       });
 

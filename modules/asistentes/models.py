@@ -11,6 +11,10 @@ class Asistentes(models.Model):
         ('Si', 'Si'),
         ('No', 'No'),
 	)
+	DESEAS_ASISTIR_A_LOS_TALLERES_CHOICES = (
+        ('Si', 'Si'),
+        ('No', 'No'),
+	)
 	TALLERES_CHOICES = (
         ('t1', 'Taller 1 El entrenamiento de la Atención Plena para el manejo del estrés.'),
 	)
@@ -32,6 +36,7 @@ class Asistentes(models.Model):
 	no_formal = models.NullBooleanField(default=False)
 	ocupacion = models.CharField(max_length=255,blank=True,null=True)
 	nombramiento = models.CharField(max_length=255,blank=True,null=True)
+	deseas_asistir_a_los_talleres = models.CharField(max_length=2, choices=DESEAS_ASISTIR_A_LOS_TALLERES_CHOICES)
 	taller = models.CharField(max_length=255, choices=TALLERES_CHOICES)
 	te_gustaria_recibir_informacion = models.BooleanField()
 	ceated = models.DateTimeField(auto_now_add=True)
