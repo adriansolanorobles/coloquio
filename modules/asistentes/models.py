@@ -41,7 +41,7 @@ class Asistentes(models.Model):
 	nombramiento = models.CharField(max_length=255,blank=True,null=True)
 	taller = models.CharField(max_length=255, choices=TALLERES_CHOICES)
 	te_gustaria_recibir_informacion = models.BooleanField()
-	asistencia_talleres = models.CharField(max_length=2,choices=ASISTENCIA_TALLERES_CHOICES)
+	asistencia_talleres = models.CharField(max_length=2,choices=ASISTENCIA_TALLERES_CHOICES, blank=True,null=True)
 	ceated = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 
