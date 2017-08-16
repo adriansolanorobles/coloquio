@@ -19,7 +19,7 @@ def asistentes_create(request):
 			asistentes = form.save()
 			ctx = {}
 			to = []
-			ctx['nombre_completo'] = asistentes.nombre + ' ' + asistentes.apellido_paterno
+			ctx['nombre_completo'] = asistentes.nombre + ' ' + asistentes.apellido_paterno + ' ' + asistentes.apellido_materno
 			ctx['folio'] = "CAP" + '-' + str(asistentes.id) + '-' + datetime.now().strftime('%d%m%y')
 			to.append(asistentes.correo)
 
