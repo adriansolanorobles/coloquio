@@ -131,6 +131,18 @@ $(document).ready(function() {
          }
       });
 
+      $('#id_asistencia_talleres').change(function(){
+         var asistencia_talleres = $( '#id_asistencia_talleres option:selected' ).val();
+         if(asistencia_talleres == "Si"){
+            $('#id_taller').prop('disabled', false);
+            
+
+         }else if(asistencia_talleres == "No"){
+            $('#id_taller').prop('disabled', true);
+            
+         }
+      });
+
   });
 </script>
 {%endblock%}
