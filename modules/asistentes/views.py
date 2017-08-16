@@ -22,9 +22,10 @@ def asistentes_create(request):
 			ctx['nombre_completo'] = asistentes.nombre + ' ' + asistentes.apellido_paterno
 			ctx['folio'] = "CAP" + '-' + str(asistentes.id) + '-' + datetime.now().strftime('%d%m%y')
 			to.append(asistentes.correo)
+
 			from_email = 'notificaciones@habilidadesparaadolescentes.com'
 			subject = 'IV Coloquio de Atención Plena, Confirmación de registro'
-			bcc = ['seldor492@gmail.com']
+			bcc = ['seldor492@gmail.com','jorge_alfamar@hotmail.com']
 			body = get_template('asistentes/asistentes_correo_registro.html').render(Context(ctx))
 			msg = EmailMessage(subject=subject, body=body, to=to, 
 			from_email=from_email,
