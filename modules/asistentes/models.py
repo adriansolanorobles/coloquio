@@ -39,9 +39,9 @@ class Asistentes(models.Model):
 	no_formal = models.NullBooleanField(default=False)
 	ocupacion = models.CharField(max_length=255,blank=True,null=True)
 	nombramiento = models.CharField(max_length=255,blank=True,null=True)
-	deseas_asistir_a_los_talleres = models.CharField(max_length=2, choices=DESEAS_ASISTIR_A_LOS_TALLERES_CHOICES,blank=True,null=True)
 	taller = models.CharField(max_length=255, choices=TALLERES_CHOICES)
 	te_gustaria_recibir_informacion = models.BooleanField()
+	deseas_asistir_a_los_talleres = models.CharField(max_length=2, choices=DESEAS_ASISTIR_A_LOS_TALLERES_CHOICES,blank=True,null=True)
 	ceated = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 
