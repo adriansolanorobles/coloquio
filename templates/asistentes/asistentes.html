@@ -135,11 +135,12 @@ $(document).ready(function() {
          var asistencia_talleres = $( '#id_asistencia_talleres option:selected' ).val();
          if(asistencia_talleres == "Si"){
             $('#id_taller').prop('disabled', false);
+            $('#id_taller').prop('required', true);
             
 
          }else if(asistencia_talleres == "No"){
             $('#id_taller').prop('disabled', true);
-            
+            $('#id_taller').prop('required', false);
          }
       });
 
