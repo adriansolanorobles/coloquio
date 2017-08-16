@@ -5,7 +5,7 @@ from .models import Asistentes
 class AsistentesForm(ModelForm):
     class Meta:
         model = Asistentes
-        fields = ('nombre','apellido_paterno','apellido_materno','correo','sexo','edad','celular','trabajas_en_educacion','institucion_de_procedencia','preescolar','primaria','secundaria','media_superior','superior','posgrado','no_formal','ocupacion','nombramiento','taller','te_gustaria_recibir_informacion')
+        fields = ('nombre','apellido_paterno','apellido_materno','correo','sexo','edad','celular','trabajas_en_educacion','institucion_de_procedencia','preescolar','primaria','secundaria','media_superior','superior','posgrado','no_formal','ocupacion','nombramiento','taller','te_gustaria_recibir_informacion','asistencia_talleres')
         widgets = {
             'nombre': forms.TextInput(attrs=
                     {
@@ -80,5 +80,5 @@ class AsistentesForm(ModelForm):
             'taller': forms.Select(attrs={'class': 'form-control'}),
 
             'te_gustaria_recibir_informacion': forms.CheckboxInput(),
-
+            'asistencia_talleres': forms.Select(attrs={'class': 'form-control'}),
         }

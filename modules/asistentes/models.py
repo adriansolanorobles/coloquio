@@ -11,9 +11,15 @@ class Asistentes(models.Model):
         ('Si', 'Si'),
         ('No', 'No'),
 	)
+	ASISTENCIA_TALLERES_CHOICES = (
+        ('Si', 'Si'),
+        ('No', 'No'),
+	)
 	TALLERES_CHOICES = (
-        ('t1', 'Taller 1 El entrenamiento de la Atención Plena para el manejo del estrés.'),
-		('t2', 'Taller 2'),
+        ('t1', 'Taller 1: El entrenamiento de la Atención Plena para el manejo del estrés. [Turno matutino]'),
+		('t2', 'Taller 2: El entrenamiento de la Atención Plena para el manejo del estrés. [Turno vespertino]'),
+		('t3', 'Taller 3: Conectar desde la igualdad. Género y Mindfulness'),
+		('t4', 'Taller 4: Prácticas contemplativas para la consciencia plena'),
 	)
 	nombre = models.CharField(max_length=255)
 	apellido_paterno = models.CharField(max_length=255)
@@ -35,6 +41,7 @@ class Asistentes(models.Model):
 	nombramiento = models.CharField(max_length=255,blank=True,null=True)
 	taller = models.CharField(max_length=255, choices=TALLERES_CHOICES)
 	te_gustaria_recibir_informacion = models.BooleanField()
+	asistencia_talleres = models.CharField(max_length=2,choices=ASISTENCIA_TALLERES_CHOICES)
 	ceated = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 
