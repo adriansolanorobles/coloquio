@@ -47,4 +47,4 @@ class Asistentes(models.Model):
 
 
 	def __str__(self):
-		return self.nombre + self.apellido_paterno
+		return self.nombre + ' ' + self.apellido_paterno + ' ' + self.apellido_materno
