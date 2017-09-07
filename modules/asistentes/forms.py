@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Asistentes, TALLERES_CHOICES_TEMPORAL
+from .models import Asistentes
 
 class AsistentesForm(ModelForm):
     class Meta:
@@ -77,7 +77,7 @@ class AsistentesForm(ModelForm):
 
                     }
             ),
-            'taller': forms.Select(choices=TALLERES_CHOICES_TEMPORAL,attrs={'class': 'form-control'}),
+            'taller': forms.Select(attrs={'class': 'form-control'}),
 
             'te_gustaria_recibir_informacion': forms.CheckboxInput(),
             'asistencia_talleres': forms.Select(attrs={'class': 'form-control'}),
