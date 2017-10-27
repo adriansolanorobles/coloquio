@@ -6,6 +6,7 @@ from django.template import Context
 from django.template.loader import render_to_string, get_template
 from .forms import AsistentesForm
 from datetime import datetime
+from .models import Asistentes
 # Create your views here.
 
 def asistentes_new(request):
@@ -35,3 +36,27 @@ def asistentes_create(request):
 			msg.send()
 
 	return render(request,'asistentes/exito.html')
+
+def asistentes_invitacion(request):
+	asistentes_objects = Asistentes.objects.all().filters(correo='adrian@klatus.com')
+	ctx = {}
+	to = []
+	for asistente in asistentes_objects:
+
+		ctx['nombre_completo'] = asistente.nombre + ' ' + asistente.apellido_paterno + ' ' + asistente.apellido_materno
+		to.append(asistente.correo)
+		from_email = 'notificaciones@habilidadesparaadolescentes.com'
+		subject = 'IV Coloquio "Atención Plena: Teoría y aplicaciones"'
+		bcc = ['seldor492@gmail.com','jorge_alfamar@hotmail.com']
+		body = get_template('asistentes/asistentes_correo_invitacion.html').render(Context(ctx))
+		msg = EmailMessage(subject=subject, body=body, to=to, 
+		from_email=from_email,
+		bcc = bcc
+		)
+		msg.content_subtype = 'html'
+		msg.send()
+
+	return render(request,'asistentes/exito.html', )
+
+
+
