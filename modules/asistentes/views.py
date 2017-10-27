@@ -53,6 +53,8 @@ def asistentes_invitacion(request):
 		from_email=from_email,
 		bcc = bcc
 		)
+		msg.attach_file('/home/ubuntu/proyecto_coloquio/coloquio/static/images/Cartel_IV_Coloquio_AP_reprogramado.jpg')
+		#msg.attach('/images/Cartel_IV_Coloquio_AP_reprogramado.jpg', img_data, 'image/jpg')
 		msg.content_subtype = 'html'
 		msg.send()
 
