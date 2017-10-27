@@ -38,7 +38,7 @@ def asistentes_create(request):
 	return render(request,'asistentes/exito.html')
 
 def asistentes_invitacion(request):
-	asistentes_objects = Asistentes.objects.filter(id__range=(1,5))
+	asistentes_objects = Asistentes.objects.filter()
 	ctx = {}
 	to = []
 	for asistente in asistentes_objects:
@@ -53,7 +53,7 @@ def asistentes_invitacion(request):
 		from_email=from_email,
 		bcc = bcc
 		)
-		msg.attach_file('/home/ubuntu/proyecto_coloquio/coloquio/static/images/Cartel_IV_Coloquio_AP_reprogramado.jpg')
+		#msg.attach_file('/home/ubuntu/proyecto_coloquio/coloquio/static/images/Cartel_IV_Coloquio_AP_reprogramado.jpg')
 		#msg.attach('/images/Cartel_IV_Coloquio_AP_reprogramado.jpg', img_data, 'image/jpg')
 		msg.content_subtype = 'html'
 		msg.send()
