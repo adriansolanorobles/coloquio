@@ -38,7 +38,7 @@ def asistentes_create(request):
 	return render(request,'asistentes/exito.html')
 
 def asistentes_invitacion(request):
-	asistentes_objects = Asistentes.objects.filter()
+	asistentes_objects = Asistentes.objects.filter(id__range=(1,10))
 	ctx = {}
 	to = []
 	for asistente in asistentes_objects:
