@@ -38,7 +38,7 @@ def asistentes_create(request):
 	return render(request,'asistentes/exito.html')
 
 def asistentes_invitacion(request):
-	asistentes_objects = Asistentes.objects.all().filter(correo='adrian@klatus.com')
+	asistentes_objects = Asistentes.objects.all()
 	ctx = {}
 	to = []
 	for asistente in asistentes_objects:
